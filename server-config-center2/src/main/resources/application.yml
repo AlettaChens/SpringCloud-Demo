@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config-server-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitlab.gizwits.com/chenyj/SpringCloudDemoRemoteGit.git
+          username: chenyj
+          password: chenyj529fi
+          searchPaths: gitrepo
+
+
+server:
+  port: 8018
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

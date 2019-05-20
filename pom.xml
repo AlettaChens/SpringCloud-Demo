@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>spring-cloud</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>spring-cloud</name>
+    <description>Demo project for Spring Boot</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+    </parent>
+    <modules>
+        <module>eureka-server-center</module>
+        <module>eureka-server-center2</module>
+        <module>eureka-client01</module>
+        <module>eureka-server-simple-center</module>
+        <module>simple-service-provide</module>
+        <module>simple-service-provide2</module>
+        <module>ribbon-simple-loadbalanced</module>
+        <module>feign-simple-loadbalanced</module>
+        <module>hystrix-ribbon-simple-circuit-breaker</module>
+        <module>hystrix-feign-simple-circuit-breaker</module>
+        <module>hystrix-dashboard-ribbon</module>
+        <module>hystrix-dashborad-feign</module>
+        <module>hystrix-turbine-simple-service</module>
+        <module>hystrix-turbine-simple-service2</module>
+        <module>hystrix-turbine-actuator</module>
+        <module>zuul-dispatch-center-server</module>
+        <module>zuul-filter-center-server</module>
+        <module>server-config-center</module>
+        <module>server-config-center2</module>
+        <module>server-config-client</module>
+        <module>bus-server-config-client</module>
+        <module>bus-server-config-client2</module>
+        <module>sleuth-zipkin-client</module>
+        <module>sleuth-zipkin-client2</module>
+        <module>sleuth-zipkin-server</module>
+        <module>stream-provider-server</module>
+        <module>stream-consumer-server</module>
+    </modules>
+    <!--springcloud依赖-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

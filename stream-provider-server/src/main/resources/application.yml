@@ -1,0 +1,30 @@
+server:
+  port: 8401
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                username: demouser
+                password: 123456
+                virtual-host: /
+      bindings:
+        output:
+          destination: studyExchange
+          contentType: text/plain
+          binder: defaultRabbit
+  application:
+    name: stream-provider
+
+
+
+

@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: register-center
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer2:8081/eureka
+  instance:
+    hostname: peer1  #声明域名
+
+#    启动该项目之前需要配置host文件来模拟两台不同的服务器
+加入以下的内容：
+#127.0.0.1 peer1,peer2

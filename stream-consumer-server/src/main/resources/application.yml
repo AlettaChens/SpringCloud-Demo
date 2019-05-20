@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                username: demouser
+                password: 123456
+                virtual-host: /
+      bindings:
+        input:
+          destination: studyExchange #队列
+          content-type: text/plain #传输的类型
+          binder: defaultRabbit
+
+
+  application:
+    name: stream-consumer
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8403

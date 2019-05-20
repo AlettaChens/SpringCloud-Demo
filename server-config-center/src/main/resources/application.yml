@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: config-server-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitlab.gizwits.com/chenyj/SpringCloudDemoRemoteGit.git  #git 路径
+          username: chenyj  #用户名
+          password: chenyj529fi  #密码
+          searchPaths: gitrepo #搜索的文件夹
+
+
+server:
+  port: 8015
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+---
+#http://localhost:8013/application-config.yml

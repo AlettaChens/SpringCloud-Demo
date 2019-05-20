@@ -1,0 +1,28 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: service-turbine
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+turbine:
+  app-config: HYSTRIX-SIMPLE-SERVICE,HYSTRIX-SIMPLE-SERVICE2 #聚合监控的服务，多个用逗号隔开
+  aggregator:
+    clusterConfig: default
+  clusterNameExpression: new String("default")
+  combine-host: true
+  instanceUrlSuffix: /hystrix.stream
+

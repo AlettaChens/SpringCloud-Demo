@@ -1,0 +1,13 @@
+server:
+  port: 8083
+# 微服务的服务名称
+spring:
+  application:
+    name: service-client01
+
+
+#服务注册中心的地址设置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8080/eureka,http://peer2:8081/eureka

@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: config-server-client2
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server-center
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost  #rabbitmq的地址
+    port: 5672   #端口号
+    username: demouser   #用户名
+    password: 123456   #密码
+server:
+  port: 8023
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#屏蔽安全验证
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
+
+#该配置文件的加载早与application.yml配置文件
